@@ -231,7 +231,7 @@
 
             $('.grid').append(
               `
-              <div class="center w-third ph3" data-sector="${sector}" data-landborder="${borderMiles}" data-fencing="${primaryFencing}" data-staffing="${borderStaffing}" data-apprehensions-per-agent="${apprehensionsPerAgent}" data-apprehensions="${apprehensions}" data-nonmx-apprehensions="${nonMxApprehensions}" data-uac-apprehensions="${uacApprehensions}" data-family-apprehensions="${familyApprehensions}" data-migrant-remains="${migrantRemains}" data-heroin="${heroin}" data-meth="${meth}" data-cocaine="${cocaine}" data-cannabis="${cannabis}">
+              <div class="center w-third pa3" data-sector="${sector}" data-landborder="${borderMiles}" data-fencing="${primaryFencing}" data-staffing="${borderStaffing}" data-apprehensions-per-agent="${apprehensionsPerAgent}" data-apprehensions="${apprehensions}" data-nonmx-apprehensions="${nonMxApprehensions}" data-uac-apprehensions="${uacApprehensions}" data-family-apprehensions="${familyApprehensions}" data-migrant-remains="${migrantRemains}" data-heroin="${heroin}" data-meth="${meth}" data-cocaine="${cocaine}" data-cannabis="${cannabis}">
                 <div class="br3 hidden ba b--black-10 mv4" >
                   <h1 class="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">${sector}</h1>
                   <div class="list-container pa2 bt b--black-10 dn">
@@ -298,8 +298,9 @@
           for (i=0; i<$dataListChildren.length; i++) {
             if ($dataListChildren[i].classList.contains(sortByValue)) {
               $('.list-container').removeClass('dn')
+            } else if ($('select option:selected').attr('data-sort-by')=='sector') {
+              $('.list-container').addClass('dn')
             }
-              console.log($dataListChildren[i]);
               $dataListChildren[i].classList.add('dn')
               $(`.${sortByValue}`).removeClass('dn')
           }
