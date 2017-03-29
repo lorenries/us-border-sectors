@@ -236,19 +236,19 @@
                   <h1 class="f4 bg-near-white br3 br--top black-60 mv0 pv2 ph3">${sector}</h1>
                   <div class="list-container pa2 bt b--black-10 dn">
                     <ul class="data-list list pl0 ml0 pb0 mb0 bg-white">
-                      <li class="miles pv2 bb b--light-silver dn">Land Border Miles: ${borderMiles}</li>
-                      <li class="fencing pv2 bb b--light-silver dn">Primary Fencing: ${primaryFencing} miles</li>
-                      <li class="staffing pv2 bb b--light-silver dn">Border Patrol Staffing: ${borderStaffing}</li>
-                      <li class="apprehensionsPerAgent pv2 bb b--light-silver dn">Apprehensions per Agent: ${apprehensionsPerAgent}</li>
-                      <li class="apprehensions pv2 bb b--light-silver dn">Apprehensions (total): ${apprehensions}</li>
-                      <li class="nonMxApprehensions pv2 bb b--light-silver dn">Other Than Mexican Apprehensions: ${nonMxApprehensions}</li>
-                      <li class="uacApprehensions pv2 bb b--light-silver dn">Unaccompanied Child Apprehensions: ${uacApprehensions}</li>
-                      <li class="familyApprehensions pv2 bb b--light-silver dn">Family Unit Apprehensions: ${familyApprehensions}</li>
-                      <li class="migrantRemains pv2 bb b--light-silver dn">Migrant Remains Found: ${migrantRemains}</li>
-                      <li class="heroin pv2 bb b--light-silver dn">Heroin Seizures (kg): ${heroin}</li>
-                      <li class="meth pv2 bb b--light-silver dn">Methamphetamine Seizures (kg): ${meth}</li>
-                      <li class="cocaine pv2 bb b--light-silver dn">Cocaine Seizures (lbs): ${cocaine}</li>
-                      <li class="cannabis pb2 dn">Cannabis Seizures (lbs): ${cannabis}</li>
+                      <li class="miles pv2">Land Border Miles: ${borderMiles}</li>
+                      <li class="fencing pv2">Primary Fencing: ${primaryFencing} miles</li>
+                      <li class="staffing pv2">Border Patrol Staffing: ${borderStaffing}</li>
+                      <li class="apprehensionsPerAgent pv2">Apprehensions per Agent: ${apprehensionsPerAgent}</li>
+                      <li class="apprehensions pv2">Apprehensions (total): ${apprehensions}</li>
+                      <li class="nonMxApprehensions pv2">Other Than Mexican Apprehensions: ${nonMxApprehensions}</li>
+                      <li class="uacApprehensions pv2">Unaccompanied Child Apprehensions: ${uacApprehensions}</li>
+                      <li class="familyApprehensions pv2">Family Unit Apprehensions: ${familyApprehensions}</li>
+                      <li class="migrantRemains pv2">Migrant Remains Found: ${migrantRemains}</li>
+                      <li class="heroin pv2">Heroin Seizures (kg): ${heroin}</li>
+                      <li class="meth pv2">Methamphetamine Seizures (kg): ${meth}</li>
+                      <li class="cocaine pv2">Cocaine Seizures (lbs): ${cocaine}</li>
+                      <li class="cannabis pb2">Cannabis Seizures (lbs): ${cannabis}</li>
                     </ul>
                   </div>
                 </div>
@@ -285,6 +285,7 @@
         var $dataListChildren = $('.data-list').children();
 
         $('.sort-by-button-group').change( function() {
+
           var sortByValue = $('.sort-by-button-group option:selected').attr('data-sort-by');
           $grid.isotope({ sortBy: sortByValue });
 
@@ -296,11 +297,11 @@
 
           for (i=0; i<$dataListChildren.length; i++) {
             if ($dataListChildren[i].classList.contains(sortByValue)) {
-              $('.list-container').removeClass('dn');
-              $(`.${sortByValue}`).toggleClass('dn')
-              // $dataListChildren[i].classList.remove('dn');
-            }  else {
+              $('.list-container').removeClass('dn')
             }
+              console.log($dataListChildren[i]);
+              $dataListChildren[i].classList.add('dn')
+              $(`.${sortByValue}`).removeClass('dn')
           }
         }
 
