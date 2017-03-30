@@ -2,7 +2,7 @@
 
 The U.S. Mexico border is divided into 9 different border patrol sectors. This is a project that allows you to sort and order the nine sectors by a range of metrics. For example, see how different sectors compare for categories like cocaine seizures, migrant apprehensions, or miles of fencing.
 
-[preview]: assets/design-files/preview.png
+[preview]: https://github.com/lorenries/us-border-sectors/blob/master/assets/design-files/preview.png
 
 To embed the visualization responsively, use pym.js:
 
